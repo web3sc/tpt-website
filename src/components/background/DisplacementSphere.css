@@ -1,6 +1,6 @@
 .displacement-sphere {
     position: fixed;
-    width: 100vw;
+    width: 10vw;
     top: 0;
     right: 0;
     bottom: 0;
@@ -16,3 +16,9 @@
 .displacement-sphere--entered {
     opacity: 1;
 }
+
+@media screen and (max-width: 400px) {
+    .displacement-sphere {
+        width: 10vw;
+    }
+  }

@@ -8,17 +8,48 @@ import { TextDecrypt } from "../content/TextDecrypt";
 import './Works.css';
 
 // Import ../../assets/recentprojects/
-import Portfolio from '../../assets/recentprojects/react-portfolio.png';
-import Veritru from '../../assets/recentprojects/veritru.png';
-import Lofo from '../../assets/recentprojects/lofo.png';
-import Startup from '../../assets/recentprojects/startup.png';
-import Lacalle from '../../assets/recentprojects/lacalle.png';
+import Sui from '../../assets/networks/sui-logo.png';
+import Celo from '../../assets/networks/celo-logo.png';
+import OL from '../../assets/networks/0L-logo.png';
+import NYM from '../../assets/networks/nym-logo.png';
+import Canto from '../../assets/networks/canto-logo.png';
 
 const useStyles = makeStyles((theme) => ({
   main: {
     maxWidth: '100vw',
-    marginTop: '3em',
+    height: '100vh',
     marginBottom: "auto",
+    backgroundColor: '#FEFDAD',
+  },
+  content: {
+    width: '75%',
+    height: '75vh',
+    top: '12.5vh',
+    display: 'flex',
+    flexWrap: 'wrap',
+    position: 'relative',
+  },
+  project: {
+    width: '30%',
+    margin: 'auto',
+    borderRadius: '50%',
+    backgroundColor: 'black',
+    "@media (max-width: 500px)": {
+      width: '45%',
+    },
+  },
+  imagediv: {
+    width: '100%', /* Set width to 100% */
+    height: '0', /* Set height to 0 */
+    paddingBottom: '100%', /* Set padding-bottom to 100% */
+    borderRadius: '50%', /* Set border-radius to 50% */
+    position: 'relative', /* Create a positioned parent */
+  },
+  image: {
+    width: '75%',
+    marginLeft: '12.5%',
+    marginTop: '25%',
+    
   },
 }));
 
@@ -32,7 +63,7 @@ export const Works = () => {
       with fancy 3D animations using Three.js for 
       the background element.`,
       alter: 'React Portfolio',
-      image: `${Portfolio}`,
+      image: `${Sui}`,
     },
     { 
       id: 2,
@@ -41,7 +72,7 @@ export const Works = () => {
       MEAN stack with fact-checking tool to promote actions against
       fake news.`,
       alter: 'VeriTru Project',
-      image: `${Veritru}`,
+      image: `${Celo}`,
     },
     { 
       id: 3,
@@ -49,7 +80,7 @@ export const Works = () => {
       description: `Logistics and Forwarding website built using
       ReactJS to design and develop its front-end.`,
       alter: 'LoFo Project',
-      image: `${Lofo}`,
+      image: `${OL}`,
     },
     { 
       id: 4,
@@ -57,7 +88,7 @@ export const Works = () => {
       description: `A website portfolio project for the Startup Dev Team
       built using MEVN stack to demonstrate the CRUD capabilities of the tech stack.`,
       alter: 'Startup Project',
-      image: `${Startup}`,
+      image: `${NYM}`,
     },
     { 
       id: 5,
@@ -66,28 +97,22 @@ export const Works = () => {
       built using Wordpress and PHP with integrated SEO tools to help
       the business ramp up its prospects and lead generation.`,
       alter: 'Startup Project',
-      image: `${Lacalle}`,
+      image: `${Canto}`,
     },
   ]);
 
   return (
     <section id="works">
       <Container component="main" className={classes.main} maxWidth="md">
+        <Container className={classes.content}>
         {projects.map((project) => (
-          <div className="project" key={ project.id }>
-            <div className="__img_wrapper">
-              <img src={ project.image } alt={ project.alter }/>
-            </div>
-            <div className="__content_wrapper">
-              <h3 className="title">
-                <TextDecrypt text={ project.id + '. ' + project.title } />
-              </h3>
-              <p className="description">
-                { project.description }
-              </p>
-            </div>
+          <div className={classes.project} key={ project.id }>
+          <div div className={classes.imagediv}>
+            <img src={project.image} alt={project.alter} className={classes.image} />
+          </div>
           </div>
         ))}
+        </Container>
       </Container>
     </section>
   );

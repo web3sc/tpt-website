@@ -35,14 +35,7 @@ export const SideNavbar = () => {
           About
         </Typography>
       </a>
-      <a href="#contact"
-        onClick={() => setActiveNav('#contact')}
-        className={activeNav === '#contact' ? 'active' : ''}
-      >
-        <Typography>
-          Contact
-        </Typography>
-      </a>
+
     </nav>
   );
 };

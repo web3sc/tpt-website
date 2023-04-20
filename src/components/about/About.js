@@ -3,54 +3,61 @@ import React from "react";
 import { Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextDecrypt } from "../content/TextDecrypt";
-import { FirstName, LastName } from "../../utils/getName";
 
 import './About.css';
-
-import profile from '../../assets/profile.png';
 
 const useStyles = makeStyles((theme) => ({
   main: {
     maxWidth: '100vw',
+    height: '90vh',
     marginTop: '3em',
-    marginBottom: "auto",
+    "@media (max-width: 500px)": {
+      marginBottom: '60%',
+    },
+    
+  },
+  content: {
+    width: '70%',
+    height: '75vh',
+    top: '12.5vh',
+    margin: 'auto',
+    display: 'flex',
+    flexWrap: 'wrap',
+    position: 'relative',
+    textAlign: 'center',
+    
+    
   },
 }));
 
 export const About = () => {
   const classes = useStyles();
-  const greetings = "Hello there!";
-  const aboutme = `I'm ${FirstName} ${LastName}, a multidisciplinary 
-                  designer & developer. I'm always down for something new and challenging!
-                  I'm here to help you create beautifully formatted websites. 
-                  My projects mostly includes web development.`;
+  
 
   return (
     <section id="about">
       <Container component="main" className={classes.main} maxWidth="md">
-        <div className="about">
-          <div className="_img"
-            style={{ 
-              background: "url(" + profile + ")",
-              backgroundSize: 'contain',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-            }}
-          >
-          </div>
-          <div className="_content_wrapper">
-            <Typography component='h2' variant="h5">
-              <TextDecrypt text={`${greetings}`} />
-            </Typography>
-            <p className="aboutme">
-              {aboutme}
-            </p>
-            <a href="#contact" className="contact-btn">
-              <i className="fas fa-terminal"></i>
-              <Typography component='span'> Send me a message.</Typography>
-            </a>
-          </div>
+        <div className={classes.content}>
+          <p>From humble beginnings TPT started as a passion to learn and help be a part of the decentralized future. Originally starting validate in the early POS days on a network that no longer exists.
+            <br/>
+            <br/>
+            We have since established ourselves as a valuable small independant blockchain infracstructure provider who cares about the projects they support. From helping test cutting edge new technology, to bringing online new networks from genesis for networks like Celo, Near, Nym and Sui.
+            <br/>
+            <br/>
+            We are self funded and have not taken any outside investment. We believe that the future of decentralized networks depends on contributions and viable sustainable economics. We dont believe in acquiring customers and users by the creation of unsustainable systems.
+            <br/>
+            <br/>
+            We are a founding council member of SDL(Staking Defense League) and believe in public goods. We spend considerable time helping community run projects be it Celo governance, integrations for Community run wallets like Taho or helping with unique intiatives like 0L.
+            <br/>
+            <br/>
+            <br/>
+            <h1>Be the change</h1>
+          </p>
+   
         </div>
+        <br/>
+            <br/>
+            <br/>
       </Container>
     </section>
   );

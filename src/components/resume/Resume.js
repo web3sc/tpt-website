@@ -1,26 +1,23 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Link } from '@material-ui/core';
-import { TextDecrypt } from '../content/TextDecrypt';
-import ResumePDF from './../../assets/Tan_Mark_Resume.pdf';
-import {
-  ResumeIcon
-} from '../content/ResumeButton';
+import { Link } from '@material-ui/core';
+
 
 const useStyles = makeStyles((theme) => ({
   footerText: {
-    position: 'fixed',
-    bottom: theme.spacing(6),
-    left: theme.spacing(6),
+
     '&:hover': {
       color: theme.palette.primary.main,
     },
     transition: 'all 0.5s ease',
-    display: 'flex',
     alignItems: 'center',
-    flexWrap: 'wrap',
+    textAlign: 'center',
+
   },
-  
+  w3text:{
+    fontFamily: 'Sacramento, cursive',
+    fontSize: '2rem',
+  }
 }));
 
 export const Resume = () => {
@@ -30,15 +27,13 @@ export const Resume = () => {
     <Link
       color='inherit'
       underline='none'
-      href= {`${ResumePDF}`}
+      href= {`https://www.web3socialcapital.xyz`}
       target='_blank'
       rel='noopener noreferrer'
       className={classes.footerText}
     >
-      <ResumeIcon />
-      <Typography component='span'>
-        <TextDecrypt text={' Resume'} />
-      </Typography>
+  <p>Made with <span role="img">❤️</span> by <span className={classes.w3text}> w3sc</span></p>
+
     </Link>
   );
 };
