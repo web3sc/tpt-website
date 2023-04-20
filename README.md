@@ -1,4 +1,4 @@
 # TPT | Webpage
 
-## Values Aligned Infracstructure
+## Values Aligned Infrastructure
 

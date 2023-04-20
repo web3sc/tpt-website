@@ -47,7 +47,7 @@ export const Content = () => {
         <Typography className={classes.phrase} >
             <TextDecrypt text={`Values`} />
             <TextDecrypt text={`Aligned`} />
-            <TextDecrypt text={`Infracstructure`} />
+            <TextDecrypt text={`Infrastructure`} />
         </Typography>
       </div>
     </div>

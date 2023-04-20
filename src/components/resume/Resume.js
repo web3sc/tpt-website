@@ -12,6 +12,12 @@ const useStyles = makeStyles((theme) => ({
     transition: 'all 0.5s ease',
     alignItems: 'center',
     textAlign: 'center',
+    "@media (max-width: 600px)": {
+      fontSize: "0.7rem",
+    },
+    "@media (max-width: 389px)": {
+      fontSize: "0.6rem",
+    }
 
   },
   w3text:{

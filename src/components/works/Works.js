@@ -58,45 +58,50 @@ export const Works = () => {
   const [projects, setProjects] = useState([
     { 
       id: 1,
-      title: 'React Portfolio', 
+      title: 'Sui', 
       description: `Designed and developed a ReactJS portfolio 
       with fancy 3D animations using Three.js for 
       the background element.`,
       alter: 'React Portfolio',
+      url:'https://sui.io/',
       image: `${Sui}`,
     },
     { 
       id: 2,
-      title: 'VeriTru Project', 
+      title: 'Celo', 
       description: `An advocacy project website built using
       MEAN stack with fact-checking tool to promote actions against
       fake news.`,
       alter: 'VeriTru Project',
+      url:'https://celo.org/',
       image: `${Celo}`,
     },
     { 
       id: 3,
-      title: 'LoFo Project', 
+      title: '0L', 
       description: `Logistics and Forwarding website built using
       ReactJS to design and develop its front-end.`,
       alter: 'LoFo Project',
+      url:'https://0l.network/',
       image: `${OL}`,
     },
     { 
       id: 4,
-      title: 'Startup Project', 
+      title: 'Nym', 
       description: `A website portfolio project for the Startup Dev Team
       built using MEVN stack to demonstrate the CRUD capabilities of the tech stack.`,
       alter: 'Startup Project',
+      url:'https://nymtech.net/',
       image: `${NYM}`,
     },
     { 
       id: 5,
-      title: 'LaCalle Cafe', 
+      title: 'Canto', 
       description: `A website project for the La Calle Cafe business
       built using Wordpress and PHP with integrated SEO tools to help
       the business ramp up its prospects and lead generation.`,
       alter: 'Startup Project',
+      url:'https://canto.io/',
       image: `${Canto}`,
     },
   ]);
@@ -106,11 +111,15 @@ export const Works = () => {
       <Container component="main" className={classes.main} maxWidth="md">
         <Container className={classes.content}>
         {projects.map((project) => (
+          
           <div className={classes.project} key={ project.id }>
           <div div className={classes.imagediv}>
+          <a href={project.url}>
             <img src={project.image} alt={project.alter} className={classes.image} />
+          </a>
           </div>
           </div>
+        
         ))}
         </Container>
       </Container>
